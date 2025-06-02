@@ -5,9 +5,9 @@ According to  [PLASSAIS et al. (2022)](https://doi.org/10.1016/j.cub.2021.12.036
 
 [Packages required](Install-Package)
 
-[Domestic canids](Domestic-canids)
+[Domestic canids](Modern-canids)
 
-[Wild canids](Wild-canids)
+[Wild canids](Coyotes-data)
 
 ## Install Packages
 ### R
