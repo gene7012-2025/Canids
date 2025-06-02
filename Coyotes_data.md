@@ -54,7 +54,7 @@ Wild_canides_data
 To evaluate the distribution of body mass in relation to the IGF1-AS genotype variant, we need to calculate de mean, median and quartiles to construct a box plot as it follows:
 
 ```{r}
-DESCRITIVE_A <- Wild_canides_data %>%
+DESCRITIVE_2 <- Wild_canides_data %>%
   group_by(IGF1_AS_Genotype) %>%
   summarise(
     mean = mean(Body_mass_kg, na.rm = TRUE),
@@ -63,19 +63,19 @@ DESCRITIVE_A <- Wild_canides_data %>%
     min = min(Body_mass_kg, na.rm = TRUE),
     max = max(Body_mass_kg, na.rm = TRUE)
   )
-DESCRITIVE_A
+DESCRITIVE_2
 ```
 
 ### Buildind the plot
 ```{r}
-Figure_A <- ggplot(Wild_canides_data, aes(x = IGF1_AS_Genotype, y = Body_mass_kg, fill=IGF1_AS_Genotype)) +
+Figure_3<- ggplot(Wild_canides_data, aes(x = IGF1_AS_Genotype, y = Body_mass_kg, fill=IGF1_AS_Genotype)) +
   geom_violin(trim = TRUE, 
               alpha = 0.5) +
   geom_boxplot(width = 0.2)+theme_light()+
   labs(x = "IGF1-AS genotypes", y = "Body Mass (kg)", title = "Distribution of body mass in relation to the IGF1-AS genotype variant") +
   theme(plot.title = element_text(hjust = 0.5))+
   scale_fill_manual(values=met.brewer("Paquin",3))+ guides(fill = guide_legend(title = "IGF1-AS genotype variant"))
-Figure_A
+Figure_3
 ```
 
 
