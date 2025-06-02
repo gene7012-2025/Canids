@@ -77,7 +77,7 @@ Figure_1
 
 ## Correlating body mass with serum IGF-1 levels
 
-### Estatística descritiva
+### Descriptive statistics
 
 To assess the correlation between body mass data (Kg) and serum IGF-1 expression levels (nmol/L), it is necessary to calculate Pearson's correlation
 
