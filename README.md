@@ -1,14 +1,6 @@
 # Body size variation in modern canids
 According to  [PLASSAIS et al. (2022)](https://doi.org/10.1016/j.cub.2021.12.036), a single non-coding genetic variant in the IGF1 gene plays an important role in regulating body size in both ancient and modern canids. Here, using the data from PLASSAIS et al. (2022) work, we will recreate some of the statistical methods and generate plots that will help in the discussion of the paper's results.
 
-# Content
-
-[Packages required](Install-Package)
-
-[Domestic canids](Modern-canids)
-
-[Wild canids](Coyotes-data)
-
 ## Install Packages
 ### R
 Install [RStudio](https://posit.co/download/rstudio-desktop/) 
