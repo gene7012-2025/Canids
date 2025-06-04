@@ -1,15 +1,6 @@
 # Body size variation in modern canids
 According to  [PLASSAIS et al. (2022)](https://doi.org/10.1016/j.cub.2021.12.036), a single non-coding genetic variant in the IGF1 gene plays an important role in regulating body size in both ancient and modern canids. Here, using the data from PLASSAIS et al. (2022) work, we will recreate some of the statistical methods and generate plots that will help in the discussion of the paper's results.
 
-# Content
-
-[Packages required](Install-Package)
-
-[Data](Dataframe)
-
-[Distribution](Evaluation-of-the-distribution-of-body-mass-in-relation-to-the-IGF1-AS-genotype-variant)
-
-
 ## Install Packages
 ### R
 Install [RStudio](https://posit.co/download/rstudio-desktop/) 
@@ -17,19 +8,19 @@ Install [RStudio](https://posit.co/download/rstudio-desktop/)
 ### Packages required for analysis
 
 ```{r}
-install.packages("ggplot2")
+#install.packages("ggplot2")
 library(ggplot2)
 
-install.packages("MetBrewer")
+#install.packages("MetBrewer")
 library(MetBrewer)
 
-install.packages("scales")
+#install.packages("scales")
 library(scales)
 
-install.packages("tidyverse")
+#install.packages("tidyverse")
 library(tidyverse)
 
-install.packages("dplyr")
+#install.packages("dplyr")
 library(dplyr)
 
 Sys.setlocale("LC_CTYPE", "en_US.UTF-8")
@@ -54,7 +45,7 @@ Wild_canides_data
 To evaluate the distribution of body mass in relation to the IGF1-AS genotype variant, we need to calculate de mean, median and quartiles to construct a box plot as it follows:
 
 ```{r}
-DESCRITIVE_2 <- Wild_canides_data %>%
+DESCRIPTIVE_2 <- Wild_canides_data %>%
   group_by(IGF1_AS_Genotype) %>%
   summarise(
     mean = mean(Body_mass_kg, na.rm = TRUE),
@@ -63,7 +54,7 @@ DESCRITIVE_2 <- Wild_canides_data %>%
     min = min(Body_mass_kg, na.rm = TRUE),
     max = max(Body_mass_kg, na.rm = TRUE)
   )
-DESCRITIVE_2
+DESCRIPTIVE_2
 ```
 
 ### Buildind the plot
@@ -78,4 +69,29 @@ Figure_3<- ggplot(Wild_canides_data, aes(x = IGF1_AS_Genotype, y = Body_mass_kg,
 Figure_3
 ```
 
+### Saving the figures
+
+```{r}
+tiff("Figure 3.tiff", width = 604)
+  Figure_3
+dev.off()
+```
+
+```{r}
+png("Figure 3.png", width = 604)
+  Figure_3
+dev.off()
+```
+
+```{r}
+pdf("Figure 3.pdf")
+ Figure_3
+dev.off()
+```
+
+```{r}
+svg("Figure 3.svg")
+ Figure_3
+dev.off()
+```
 
